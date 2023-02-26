@@ -1,0 +1,164 @@
+/// Main Styles File
+/// Here we import all the global Styles files we need for our project.
+
+@import "styles/normalize.scss";
+@import "styles/root.scss";
+@import "styles/fonts.scss";
+
+body {
+  // color: #fff;
+  font-family: "Roboto", sans-serif;
+  color: var(--color-primary);
+}
+
+p,
+h1,
+h2 {
+  color: var(--color-text);
+}
+
+.home-page {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--color-bcg);
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &__info {
+    p {
+      line-height: 1.5;
+    }
+    .info-title {
+      line-height: 1.5;
+    }
+  }
+  &__cards {
+    gap: 1rem;
+    .cards-element {
+      background-color: #272d42;
+      border-radius: 16px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      &__icon {
+        width: 56px;
+        height: 56px;
+      }
+      &__info {
+        font-size: 14px;
+        max-width: 85%;
+        line-height: 1.5;
+        p {
+          color: var(--color-card-paragraph);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page {
+    padding-bottom: 2rem;
+    flex-direction: column;
+    &__info,
+    &__cards {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 90%;
+      .cards-element {
+        padding: 1rem;
+        width: 90%;
+        max-width: 400px;
+        min-width: 250px;
+        height: 200px;
+      }
+    }
+    &__info {
+      padding: 2rem 1rem;
+      max-width: 400px;
+      &__title {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .home-page {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+
+    &__cards {
+      line-height: 1;
+      display: flex;
+      margin: 1rem 2rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 500px;
+
+      .cards-element {
+        padding: 1rem 0.5rem;
+        width: 230px;
+        height: 220px;
+      }
+    }
+    &__info {
+      font-size: 1rem;
+      padding: 2rem 0;
+      max-width: 500px;
+      .info-title {
+        line-height: 1.5;
+        margin: 1rem 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .home-page {
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: row;
+
+    &__cards {
+      height: 500px;
+      width: 600px;
+      align-items: center;
+      line-height: 1;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .cards-element {
+        padding: 2rem 0.5rem;
+        width: 270px;
+        height: 240px;
+      }
+    }
+    &__info {
+      height: 500px;
+      width: 40vw;
+      display: flex;
+      flex-direction: column;
+      .info-title h1 {
+        width: 90%;
+        margin-bottom: 3rem 0;
+      }
+      .info-content {
+        padding: 1rem 0;
+        p {
+          width: 90%;
+        }
+      }
+    }
+  }
+}
